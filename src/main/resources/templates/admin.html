@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{common :: commonHead}">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>관리자 페이지</h2>
+    <h4 class="mt-4">전체 사용자 목록</h4>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Email</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">1</td>
+            <td th:text="${user.email}">admin@hansung.ac.kr</td>
+            <td th:text="${user.role}">ROLE_ADMIN</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:insert="~{common :: commonScript}"></div>
+</body>
+</html>
